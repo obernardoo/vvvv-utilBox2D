@@ -1,0 +1,119 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv40beta22.dtd" >
+   <PATCH nodename="C:\Documents and Settings\vux\Desktop\GetBodyById (Box2d).v4p">
+   <BOUNDS height="5625" left="4350" top="2865" type="Window" width="3645">
+   </BOUNDS>
+   <NODE componentmode="InABox" id="7" nodename="IOBox (Node)">
+   <BOUNDS height="0" left="570" top="240" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="570" top="240" type="Box" width="795">
+   </BOUNDS>
+   <BOUNDS height="160" left="5940" top="4050" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Bodies">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="6" nodename="IOBox (Node)">
+   <BOUNDS height="0" left="600" top="4380" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="600" top="4380" type="Box" width="795">
+   </BOUNDS>
+   <BOUNDS height="160" left="6630" top="7155" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Bodies">
+   </PIN>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="4" nodename=":PLUGINS:\Box2dNodes.dll|VVVV.Nodes.GetBodyDetailsNode">
+   <BOUNDS height="0" left="1290" top="1095" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="0" left="1290" top="1095" type="Box" width="0">
+   </BOUNDS>
+   <BOUNDS height="0" left="6945" top="5505" type="Window" width="0">
+   </BOUNDS>
+   <PIN pinname="Bodies" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Custom" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="PositionXY" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Rotation" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="VelocityXY" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Is Dynamic" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Is Sleeping" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Is Frozen" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Mass" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Inertia" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Shapes" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Shape Types" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Shape Count" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Body Id" pintype="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Bodies" srcnodeid="7" srcpinname="Output Node">
+   </LINK>
+   <NODE componentmode="Hidden" id="0" nodename="GetSlice (Node)">
+   <BOUNDS height="0" left="585" top="3570" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="0" dstpinname="Input Node" srcnodeid="7" srcpinname="Output Node">
+   </LINK>
+   <LINK dstnodeid="6" dstpinname="Input Node" srcnodeid="0" srcpinname="Output Node">
+   </LINK>
+   <NODE nodename="Sift (Value)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="1305" top="2460" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Find" slicecount="1" values="All">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Filter" visible="1">
+   </PIN>
+   <PIN pinname="Input Index" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Body Id" dstnodeid="8" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="9">
+   <BOUNDS type="Node" left="1875" top="1605" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1875" top="1605" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8295" top="3360" width="215" height="160">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Id">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Filter" linkstyle="VHV">
+   <LINKPOINT x="2640" y="2145">
+   </LINKPOINT>
+   <LINKPOINT x="1515" y="2145">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Input Index" dstnodeid="0" dstpinname="Index" linkstyle="VHV">
+   <LINKPOINT x="1605" y="3150">
+   </LINKPOINT>
+   <LINKPOINT x="1290" y="3150">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>

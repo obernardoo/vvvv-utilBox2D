@@ -1,0 +1,119 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta30.dtd" >
+   <PATCH nodename="C:\Users\lalo\Desktop\Nueva\_ProcesosVVVVCosas\_Box2D\AguaBox2d\module\GetShapeByCustom (Box2d).v4p" systemname="GetShapeByCustom (Box2d)" filename="C:\Users\lalo\Desktop\Nueva\_ProcesosVVVVCosas\_Box2D\AguaBox2d\module\GetShapeByCustom (Box2d).v4p">
+   <BOUNDS type="Window" left="7800" top="3285" width="6000" height="4710">
+   </BOUNDS>
+   <NODE systemname="GetBodyDetails (Box2d)" filename="%VVVV%\addonpack\lib\nodes\plugins\vuxbins\Box2dNodes.dll" nodename="GetBodyDetails (Box2d)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="630" top="1460" width="1620" height="270">
+   </BOUNDS>
+   <PIN pinname="Shape Types" visible="1">
+   </PIN>
+   <PIN pinname="Shapes" visible="1">
+   </PIN>
+   <PIN pinname="Bodies" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Filter Persisted" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="PositionXY" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Rotation" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="VelocityXY" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Is Dynamic" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Is Sleeping" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Is Frozen" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Mass" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Inertia" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Has TTL" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="TTL" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="LifeTime" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Body Id" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Shape Count" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Custom" visible="1" pintype="Output">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="1" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="0" left="2295" top="770" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="2295" top="770" type="Box" width="765">
+   </BOUNDS>
+   <BOUNDS height="160" left="9255" top="3915" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Custom">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="1" values="Circle">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="2" nodename="Sift (String)" systemname="Sift (String)">
+   <BOUNDS height="270" left="1680" top="1880" type="Node" width="1875">
+   </BOUNDS>
+   <PIN pinname="Comparison" visible="1" slicecount="1" values="MatchesAny">
+   </PIN>
+   <PIN pinname="Case Sensitive" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Filter" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input Index" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="3" nodename="GetSlice (Node)" systemname="GetSlice (Node)">
+   <BOUNDS height="270" left="630" top="2525" type="Node" width="1155">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="4" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Bodies">
+   </PIN>
+   <BOUNDS type="Box" left="630" top="760" width="780" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="630" top="760" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output Node" dstnodeid="0" dstpinname="Bodies">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Shapes" dstnodeid="3" dstpinname="Input Node">
+   </LINK>
+   <LINK dstnodeid="3" dstpinname="Index" srcnodeid="2" srcpinname="Input Index" linkstyle="VHV">
+   <LINKPOINT x="2205" y="2330">
+   </LINKPOINT>
+   <LINKPOINT x="1455" y="2210">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="5" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Output Node|">
+   </PIN>
+   <BOUNDS type="Box" left="630" top="3025" width="780" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="630" top="3025" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output Node" dstnodeid="5" dstpinname="Input Node">
+   </LINK>
+   <LINK dstnodeid="2" dstpinname="Filter" srcnodeid="1" srcpinname="Output String" linkstyle="VHV">
+   <LINKPOINT x="2800" y="1310">
+   </LINKPOINT>
+   <LINKPOINT x="1850" y="1130">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Custom" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   </PATCH>

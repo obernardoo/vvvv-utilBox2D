@@ -1,0 +1,207 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv40beta23.dtd" >
+   <PATCH nodename="C:\vvvv\beta23\modules\vux\Box2d\GetJointByType (Box2d).v4p">
+   <BOUNDS height="5970" left="2085" top="2190" type="Window" width="5685">
+   </BOUNDS>
+   <NODE componentmode="InABox" id="7" nodename="IOBox (Node)">
+   <BOUNDS height="0" left="915" top="225" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="915" top="225" type="Box" width="795">
+   </BOUNDS>
+   <BOUNDS height="160" left="5940" top="4050" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Joints">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="6" nodename="IOBox (Node)">
+   <BOUNDS height="0" left="540" top="4740" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="540" top="4740" type="Box" width="795">
+   </BOUNDS>
+   <BOUNDS height="160" left="6630" top="7155" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Joints">
+   </PIN>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="5" nodename="IOBox (String)">
+   <BOUNDS height="0" left="1830" top="1830" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="1830" top="1830" type="Box" width="705">
+   </BOUNDS>
+   <BOUNDS height="160" left="9255" top="3915" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Type">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="4" nodename="Sift (String)">
+   <BOUNDS height="270" left="1215" top="2925" type="Node" width="1920">
+   </BOUNDS>
+   <PIN pinname="Comparison" visible="1">
+   </PIN>
+   <PIN pinname="Case Sensitive" visible="1">
+   </PIN>
+   <PIN pinname="Filter" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input Index" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="3" nodename="IOBox (Enumerations)">
+   <BOUNDS height="0" left="2760" top="1830" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="2760" top="1830" type="Box" width="840">
+   </BOUNDS>
+   <BOUNDS height="160" left="10125" top="4305" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Comparison">
+   </PIN>
+   <PIN pinname="Input Enum" slicecount="1" values="MatchesAny">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Comparison" linkstyle="VHV" srcnodeid="3" srcpinname="Output Enum">
+   <LINKPOINT x="3290" y="2615">
+   </LINKPOINT>
+   <LINKPOINT x="1990" y="2410">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InABox" id="2" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="3975" top="1830" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="450" left="3975" top="1830" type="Box" width="450">
+   </BOUNDS>
+   <BOUNDS height="160" left="11100" top="3870" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Case Sensitive|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Case Sensitive" linkstyle="VHV" srcnodeid="2" srcpinname="Y Output Value">
+   <LINKPOINT x="4365" y="2588">
+   </LINKPOINT>
+   <LINKPOINT x="3135" y="2588">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="4" dstpinname="Filter" linkstyle="PolyLine" srcnodeid="5" srcpinname="Output String">
+   </LINK>
+   <NODE componentmode="Hidden" id="1" nodename="GetSlice (Node)">
+   <BOUNDS height="0" left="525" top="3930" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Input Node" linkstyle="Bezier" srcnodeid="7" srcpinname="Output Node">
+   <LINKPOINT x="945" y="2190">
+   </LINKPOINT>
+   <LINKPOINT x="555" y="2190">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="6" dstpinname="Input Node" srcnodeid="1" srcpinname="Output Node">
+   </LINK>
+   <LINK dstnodeid="1" dstpinname="Index" linkstyle="VHV" srcnodeid="4" srcpinname="Input Index">
+   <LINKPOINT x="1860" y="3495">
+   </LINKPOINT>
+   <LINKPOINT x="1230" y="3495">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" id="0" nodename=":PLUGINS:\Box2dNodes.dll|VVVV.Nodes.GetJointDetailsNode">
+   <BOUNDS height="0" left="1215" top="1455" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="0" left="1215" top="1455" type="Box" width="0">
+   </BOUNDS>
+   <BOUNDS height="0" left="4815" top="6240" type="Window" width="0">
+   </BOUNDS>
+   <PIN pinname="Bodies" visible="1">
+   </PIN>
+   <PIN pinname="Custom" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="PositionXY" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Rotation" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="VelocityXY" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Is Dynamic" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Is Sleeping" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Is Frozen" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Mass" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Inertia" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Shapes" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Shape Types" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Shape Count" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Body Id" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Position XY" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Rotation X" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Velocity XY" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Is Dynamic X" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Is Sleeping X" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Is Frozen X" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Mass X" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Inertia X" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Shape Count X" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Body Id X" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Joint Id" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Anchor 2XY" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Body 2" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Body 1" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Anchor 1XY" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Type" pintype="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="0" dstpinname="Input" linkstyle="Bezier" srcnodeid="7" srcpinname="Output Node">
+   <LINKPOINT x="945" y="960">
+   </LINKPOINT>
+   <LINKPOINT x="1230" y="960">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Type" dstnodeid="4" dstpinname="Input">
+   </LINK>
+   </PATCH>

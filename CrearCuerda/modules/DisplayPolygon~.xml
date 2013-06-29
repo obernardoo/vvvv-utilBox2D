@@ -94,7 +94,59 @@
    <PIN pinname="Shapes" visible="1">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" hiddenwhenlocked="0" id="13" nodename=":PLUGINS:\Box2dNodes.dll|VVVV.Nodes.Box2dGetPolygonsNode" systemname="GetPolygons (Box2d)" filename="%VVVV%\addonpack\lib\nodes\plugins\vuxbins\Box2dNodes.dll">
+   <NODE componentmode="Hidden" hiddenwhenlocked="0" id="12" nodename="Line (EX9.Geometry)" systemname="Line (EX9.Geometry)">
+   <BOUNDS height="270" left="2040" top="4425" type="Node" width="2505">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="VerticesXYZ" visible="1">
+   </PIN>
+   <PIN pinname="BinSize" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" hiddenwhenlocked="0" id="11" nodename="Vector (2d Split)" systemname="Vector (2d Split)">
+   <BOUNDS height="0" left="2310" top="2715" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="XY" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" hiddenwhenlocked="0" id="10" nodename="Vector (3d Join)" systemname="Vector (3d Join)">
+   <BOUNDS height="270" left="2295" top="3180" type="Node" width="1230">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10" dstpinname="X" hiddenwhenlocked="0" srcnodeid="11" srcpinname="X">
+   </LINK>
+   <LINK dstnodeid="10" dstpinname="Y" hiddenwhenlocked="0" srcnodeid="11" srcpinname="Y">
+   </LINK>
+   <LINK dstnodeid="12" dstpinname="VerticesXYZ" hiddenwhenlocked="0" srcnodeid="10" srcpinname="XYZ">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output Node" dstnodeid="14" dstpinname="Bodies">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Layer" dstnodeid="3" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="15" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="4530" top="510" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4530" top="510" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Color">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Color Output" dstnodeid="12" dstpinname="Color">
+   </LINK>
+   <NODE componentmode="Hidden" hiddenwhenlocked="0" id="13" nodename="GetPolygons (Box2d)" systemname="GetPolygons (Box2d)" filename="%VVVV%\addonpack\lib\nodes\plugins\vuxbins\Box2dNodes.dll">
    <BOUNDS height="270" left="2070" top="2010" type="Node" width="1860">
    </BOUNDS>
    <BOUNDS height="0" left="2070" top="2010" type="Box" width="0">
@@ -122,68 +174,16 @@
    </NODE>
    <LINK dstnodeid="13" dstpinname="Shapes" hiddenwhenlocked="0" srcnodeid="14" srcpinname="Shapes">
    </LINK>
-   <NODE componentmode="Hidden" hiddenwhenlocked="0" id="12" nodename="Line (EX9.Geometry)" systemname="Line (EX9.Geometry)">
-   <BOUNDS height="270" left="2040" top="4425" type="Node" width="2505">
-   </BOUNDS>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <PIN pinname="VerticesXYZ" visible="1">
-   </PIN>
-   <PIN pinname="BinSize" visible="1">
-   </PIN>
-   </NODE>
-   <NODE componentmode="Hidden" hiddenwhenlocked="0" id="11" nodename="Vector (2d Split)" systemname="Vector (2d Split)">
-   <BOUNDS height="0" left="2310" top="2715" type="Node" width="0">
-   </BOUNDS>
-   <PIN pinname="XY" visible="1">
-   </PIN>
-   <PIN pinname="X" visible="1">
-   </PIN>
-   <PIN pinname="Y" visible="1">
-   </PIN>
-   </NODE>
    <LINK dstnodeid="11" dstpinname="XY" hiddenwhenlocked="0" srcnodeid="13" srcpinname="VerticesXY" linkstyle="VHV">
    <LINKPOINT x="4065" y="2490">
    </LINKPOINT>
    <LINKPOINT x="2340" y="2490">
    </LINKPOINT>
    </LINK>
-   <NODE componentmode="Hidden" hiddenwhenlocked="0" id="10" nodename="Vector (3d Join)" systemname="Vector (3d Join)">
-   <BOUNDS height="270" left="2295" top="3180" type="Node" width="1230">
-   </BOUNDS>
-   <PIN pinname="X" visible="1">
-   </PIN>
-   <PIN pinname="Y" visible="1">
-   </PIN>
-   <PIN pinname="XYZ" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="10" dstpinname="X" hiddenwhenlocked="0" srcnodeid="11" srcpinname="X">
-   </LINK>
-   <LINK dstnodeid="10" dstpinname="Y" hiddenwhenlocked="0" srcnodeid="11" srcpinname="Y">
-   </LINK>
-   <LINK dstnodeid="12" dstpinname="VerticesXYZ" hiddenwhenlocked="0" srcnodeid="10" srcpinname="XYZ">
-   </LINK>
    <LINK dstnodeid="12" dstpinname="BinSize" hiddenwhenlocked="0" srcnodeid="13" srcpinname="Vertices Count" linkstyle="VHV">
    <LINKPOINT x="6045" y="3840">
    </LINKPOINT>
    <LINKPOINT x="2880" y="3840">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="4" srcpinname="Output Node" dstnodeid="14" dstpinname="Bodies">
-   </LINK>
-   <LINK srcnodeid="12" srcpinname="Layer" dstnodeid="3" dstpinname="Input Node">
-   </LINK>
-   <NODE nodename="IOBox (Color)" componentmode="InABox" id="15" systemname="IOBox (Color)">
-   <BOUNDS type="Node" left="4530" top="510" width="0" height="0">
-   </BOUNDS>
-   <BOUNDS type="Box" left="4530" top="510" width="2250" height="480">
-   </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Color">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="15" srcpinname="Color Output" dstnodeid="12" dstpinname="Color">
    </LINK>
    </PATCH>
